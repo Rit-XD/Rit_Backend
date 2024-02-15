@@ -13,7 +13,7 @@ app.set("view engine", "jade");
 app.use("/", indexRouter);
 
 app.listen(port, () => {
-  console.log(`Server is Live at http://localhost:${port}`);
+  console.log(`not live http://localhost:${port}`);
 });
 
 app.use(
