@@ -2,6 +2,14 @@ import express, { Express, Request, Response, Application } from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import indexRouter from "./routes/index";
+const mongoose = require("mongoose");
+
+require("dotenv").config();
+
+mongoose.set('strictQuery', false);
+
+mongoose.connect(process.env.DB_CONNECTION);
+
 
 //For env File
 dotenv.config();
