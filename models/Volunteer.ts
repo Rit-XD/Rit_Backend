@@ -42,6 +42,4 @@ const VolunteerSchema = new Schema({
 
 });
 
-const Volunteers = mongoose.model("Volunteers", VolunteerSchema);
-
-module.exports = Volunteers;
+export const Volunteers = mongoose.model("Volunteers", VolunteerSchema);
