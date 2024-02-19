@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import { Passengers } from "./Passenger";
+import { Cars } from "./Car";
 const Schema = mongoose.Schema;
 const RideSchema = new Schema({
   origin: {
@@ -31,8 +32,13 @@ const RideSchema = new Schema({
     type: Date,
     required: true,
   },
-  carecenter: {
+  careCenter: {
     type: Object,
+    required: true,
+  },
+  car: {
+    type: Object,
+    ref: Cars,
     required: true,
   },
 });
