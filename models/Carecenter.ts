@@ -27,5 +27,4 @@ const CarecenterSchema = new Schema({
   },
 });
 
-const Carecenters = mongoose.model("Carecenters", CarecenterSchema);
-module.exports = Carecenters;
+export const Carecenters = mongoose.model("Carecenters", CarecenterSchema);
