@@ -2,19 +2,20 @@ import express, { Express, Request, Response, Application } from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import indexRouter from "./routes/index";
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
+
 
 require("dotenv").config();
 
 mongoose.set('strictQuery', false);
+mongoose.connect(process.env.DB_CONNECTION as string);
 
-mongoose.connect(process.env.DB_CONNECTION);
-
+import { router as carecenterRouter }  from "./routes/carecenter";
 
 //For env File
 dotenv.config();
 
-const app: Application = express();
+export const app: Application = express();
 const port = process.env.PORT || 8000;
 
 app.set("view engine", "jade");
@@ -31,3 +32,6 @@ app.use(
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
+
+app.use(express.json());
+app.use("/api/carecenter", carecenterRouter);

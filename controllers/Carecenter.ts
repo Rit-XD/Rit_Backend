@@ -3,7 +3,9 @@ import {Request, Response} from 'express';
 import bcrypt from "bcrypt";
 
 
-const create = async (req: Request, res: Response) => {
+
+export const create = async (req: Request, res: Response) => {
+    console.log(req);
     let c = new Carecenter();
     c.name = req.body.name;
     c.password = req.body.password;
@@ -18,8 +20,12 @@ const create = async (req: Request, res: Response) => {
     const salt = await bcrypt.genSalt(10);
     c.password = await bcrypt.hash(c.password, salt);
 
-
-
+    c.save().then((result) => {
+        res.json({
+            status: "success",
+        });
+    });
 }
+
 
 
