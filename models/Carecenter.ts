@@ -1,4 +1,6 @@
 import mongoose from "mongoose";
+import { Car } from "./Car";
+
 const Schema = mongoose.Schema;
 const CarecenterSchema = new Schema({
   name: {
@@ -23,6 +25,11 @@ const CarecenterSchema = new Schema({
   },
   logo: {
     type: String,
+    required: true,
+  },
+  cars: {
+    type: [Object],
+    ref: "Car",
     required: true,
   },
 });
