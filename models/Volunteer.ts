@@ -37,9 +37,6 @@ const VolunteerSchema = new Schema({
     type: String,
     required: false,
   },
-
-
-
 });
 
 export const Volunteer = mongoose.model("Volunteers", VolunteerSchema);
