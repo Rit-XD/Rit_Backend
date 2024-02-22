@@ -2,19 +2,19 @@ import express, { Express, Request, Response, Application } from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import indexRouter from "./routes/index";
-const mongoose = require("mongoose");
-import { router as volunteerRouter } from "./routes/volunteer";
-
+import mongoose from "mongoose";
 require("dotenv").config();
 
-mongoose.set("strictQuery", false);
+mongoose.set('strictQuery', false);
+mongoose.connect(process.env.DB_CONNECTION as string);
 
-mongoose.connect(process.env.DB_CONNECTION);
+import { router as carecenterRouter }  from "./routes/carecenter";
+import { router as volunteerRouter } from "./routes/volunteer";
 
 //For env File
 dotenv.config();
 
-const app: Application = express();
+export const app: Application = express();
 const port = process.env.PORT || 8000;
 
 app.set("view engine", "jade");
@@ -33,4 +33,5 @@ app.use(
 );
 
 app.use(express.json());
+app.use("/api/carecenter", carecenterRouter);
 app.use("/api/volunteer", volunteerRouter);
