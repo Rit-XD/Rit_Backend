@@ -3,14 +3,13 @@ import dotenv from "dotenv";
 import cors from "cors";
 import indexRouter from "./routes/index";
 import mongoose from "mongoose";
-
-
 require("dotenv").config();
 
 mongoose.set('strictQuery', false);
 mongoose.connect(process.env.DB_CONNECTION as string);
 
 import { router as carecenterRouter }  from "./routes/carecenter";
+import { router as volunteerRouter } from "./routes/volunteer";
 
 //For env File
 dotenv.config();
@@ -35,3 +34,4 @@ app.use(
 
 app.use(express.json());
 app.use("/api/carecenter", carecenterRouter);
+app.use("/api/volunteer", volunteerRouter);

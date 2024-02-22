@@ -43,4 +43,4 @@ const RideSchema = new Schema({
   },
 });
 
-export const Ride = mongoose.model("Carecenters", RideSchema);
+export const Ride = mongoose.model("Rides", RideSchema);

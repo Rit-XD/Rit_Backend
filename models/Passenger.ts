@@ -15,7 +15,8 @@ const PassengerSchema = new Schema({
     required: true,
   },
   careCenter: {
-    type: Object, ref: Carecenter,
+    type: Object,
+    ref: Carecenter,
     required: true,
   },
   phone: {
@@ -26,7 +27,6 @@ const PassengerSchema = new Schema({
     type: String,
     required: false,
   },
-    
 });
 
 export const Passenger = mongoose.model("Passengers", PassengerSchema);
