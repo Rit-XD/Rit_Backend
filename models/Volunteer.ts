@@ -42,4 +42,4 @@ const VolunteerSchema = new Schema({
 
 });
 
-export const Volunteers = mongoose.model("Volunteers", VolunteerSchema);
+export const Volunteer = mongoose.model("Volunteers", VolunteerSchema);
