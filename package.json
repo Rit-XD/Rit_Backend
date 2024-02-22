@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.ts",
+  "type": "module",
   "scripts": {
-    "build": "npm install && tsc",
+    "build": "npx tsc",
     "start": "node dist/app.ts",
     "dev": "nodemon app.ts"
   },
