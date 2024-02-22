@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { Carecenters } from "./Carecenter";
+import { Carecenter } from "./Carecenter";
 const Schema = mongoose.Schema;
 const PassengerSchema = new Schema({
   firstName: {
@@ -15,7 +15,7 @@ const PassengerSchema = new Schema({
     required: true,
   },
   careCenter: {
-    type: Object, ref: Carecenters,
+    type: Object, ref: Carecenter,
     required: true,
   },
   phone: {
@@ -29,4 +29,4 @@ const PassengerSchema = new Schema({
     
 });
 
-export const Passengers = mongoose.model("Passengers", PassengerSchema);
+export const Passenger = mongoose.model("Passengers", PassengerSchema);

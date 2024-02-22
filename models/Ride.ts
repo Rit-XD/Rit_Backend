@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
-import { Passengers } from "./Passenger";
-import { Cars } from "./Car";
+import { Passenger } from "./Passenger";
+import { Car } from "./Car";
 const Schema = mongoose.Schema;
 const RideSchema = new Schema({
   origin: {
@@ -13,7 +13,7 @@ const RideSchema = new Schema({
   },
   passengers: {
     type: [Object],
-    ref: Passengers,
+    ref: Passenger,
     required: true,
   },
   originAdress: {
@@ -38,9 +38,9 @@ const RideSchema = new Schema({
   },
   car: {
     type: Object,
-    ref: Cars,
+    ref: Car,
     required: true,
   },
 });
 
-export const Rides = mongoose.model("Carecenters", RideSchema);
+export const Ride = mongoose.model("Carecenters", RideSchema);
