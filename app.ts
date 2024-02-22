@@ -3,13 +3,13 @@ import dotenv from "dotenv";
 import cors from "cors";
 import indexRouter from "./routes/index";
 const mongoose = require("mongoose");
+import { router as volunteerRouter } from "./routes/volunteer";
 
 require("dotenv").config();
 
-mongoose.set('strictQuery', false);
+mongoose.set("strictQuery", false);
 
 mongoose.connect(process.env.DB_CONNECTION);
-
 
 //For env File
 dotenv.config();
@@ -31,3 +31,6 @@ app.use(
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
+
+app.use(express.json());
+app.use("/api/volunteer", volunteerRouter);
