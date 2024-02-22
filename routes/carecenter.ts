@@ -1,4 +1,4 @@
-import { create } from "../controllers/Carecenter";
+import { create } from "../controllers/carecenter";
 import express from "express";
 
 export const router = express.Router();
