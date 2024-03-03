@@ -1,7 +1,8 @@
-import { create, login } from "../controllers/carecenter";
+import { create, get } from "../controllers/carecenter";
 import express from "express";
 
 export const router = express.Router();
 
 router.post("/create", create);
-router.post("/login", login);
+router.get("/:id", get);
+// router.post("/login", login);

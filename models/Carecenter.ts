@@ -7,7 +7,7 @@ const CarecenterSchema = new Schema({
     type: String,
     required: true,
   },
-  password: {
+  supaBaseId: {
     type: String,
     required: true,
   },
